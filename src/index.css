@@ -1,0 +1,33 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --game-bg: #0f172a;
+}
+
+.dark {
+  --game-bg: #020617;
+}
+
+body {
+  @apply bg-game-bg text-slate-200 transition-colors duration-300;
+  margin: 0;
+  min-height: 100vh;
+}
+
+.glass {
+  @apply bg-white/10 backdrop-blur-md border border-white/20;
+}
+
+.pixel-border {
+  box-shadow: 
+    0 4px 0 0 #000,
+    0 -4px 0 0 #000,
+    4px 0 0 0 #000,
+    -4px 0 0 0 #000;
+}
+
+canvas {
+  image-rendering: pixelated;
+}
