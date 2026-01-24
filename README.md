@@ -1,110 +1,53 @@
-# Mini Games Arcade
+# Arcade Hub - Professional Games Collection
 
-A professional arcade hub featuring a collection of addictive mini-games. Built with React 18, TypeScript, and Tailwind CSS.
+A modular high-fidelity arcade portal built with **Vue 3**, **TypeScript**, and **Pinia**. Designed for seamless game engine integration, featuring global player stats, persistent earnings, and a "Cyber Arcade" lobby experience.
 
-## Games Collection
+## Overview
+This collection replaces the legacy React dashboard with a modern, code-split Vue 3 architecture. Each game operates as an independent engine within a secured "Game Chamber", sharing a unified state system for achievements and tickets.
 
-- **🐱 Clumsy Cat Chaos** - Navigate your cat through household obstacles. Jump and run to survive!
-- **👵 Dance Battle Seniors** - *Coming Soon* - Hit the beats with the coolest grandparents.
-- **🍕 Food Fight Frenzy** - *Coming Soon* - Dodge flying cafeteria food.
-- **💼 Office Prank Wars** - *Coming Soon* - Set up pranks without getting caught.
-- **🧟 Zombie Plant Defenders** - *Coming Soon* - Protect your garden from the undead.
+## Features Comparison
 
-## Features
-
-- **Centralized Dashboard** - Browse and play all games from a single hub.
-- **Persistent High Scores** - Your best scores are saved automatically using Zustand persistence.
-- **Dark/Light Mode** - Play in the theme that suits your mood.
-- **Mobile Responsive** - Built-in touch controls for playing on the go.
-- **Smooth Animations** - Powered by Framer Motion.
-- **Retro Aesthetic** - Modern UI with a nostalgic pixel-perfect touch.
+| Feature | Legacy (React) | Upgraded (Vue 3 v2.0) |
+| :--- | :--- | :--- |
+| **Architecture** | Monolithic dashboard | **Modular Engine-based Design** |
+| **State** | Standard Reducers | **Pinia (Cross-module persistence)** |
+| **Routing** | Component switching | **Vue Router (Chamber Isolation)** |
+| **Loading** | Bulk asset load | **Dynamic Import (On-demand play)** |
+| **UX** | Static list | **Animated 3D Discovery Lobby** |
+| **Stats** | Local only | **Global XP & Ticket Ecosystem** |
 
 ## Tech Stack
+- **Framework:** Vue 3.5 (Composition API)
+- **Routing:** Vue Router 4
+- **State:** Pinia (Enterprise patterns)
+- **Styling:** Tailwind CSS (Neon-modern palette)
+- **Icons:** Lucide Vue
 
-- **React 18** - Frontend framework
-- **TypeScript** - Type safety
-- **Vite** - High-performance build tool
-- **Tailwind CSS** - Modern styling
-- **Zustand** - Global state management & persistence
-- **Framer Motion** - Fluid UI animations
-- **Lucide React** - High-quality icon set
-
-## Getting Started
+## Setup & Build Instructions
 
 ### Prerequisites
-
-- Node.js 18+
-- npm 9+
+- Node.js 20.x or higher
+- npm 10.x or higher
 
 ### Installation
-
 ```bash
-# Clone the repository
-git clone https://github.com/mk-knight23/35-JS-Mini-Games-Collection.git
-
-# Navigate to project
-cd 35-JS-Mini-Games-Collection
-
-# Install dependencies
 npm install
+```
 
-# Start development server
+### Development
+```bash
 npm run dev
 ```
 
-### Building for Production
-
+### Production Build
 ```bash
-# Build optimized bundle
 npm run build
-
-# Preview production build
-npm run preview
 ```
-
-## Project Structure
-
-```
-35-JS-Mini-Games-Collection/
-├── public/
-│   └── favicon.svg      # Arcade icon
-├── src/
-│   ├── components/
-│   │   └── games/       # Individual game components
-│   │       └── ClumsyCatChaos.tsx
-│   ├── stores/
-│   │   └── arcadeStore.ts # Centralized arcade state
-│   ├── types/
-│   │   └── game.ts       # TypeScript interfaces
-│   ├── App.tsx          # Main dashboard
-│   ├── main.tsx         # Entry point
-│   └── index.css        # Global styles
-├── index.html
-├── package.json
-├── tsconfig.json
-├── vite.config.ts
-└── tailwind.config.js
-```
-
-## Game Mechanics
-
-### Clumsy Cat Chaos
-- **Goal:** Survive as long as possible by jumping over obstacles.
-- **Scoring:** Points are awarded for each obstacle cleared.
-- **Progression:** Speed and obstacle frequency increase with score levels.
 
 ## Deployment
-
-This project includes a GitHub Actions workflow for automatic deployment to GitHub Pages.
-
-1. Enable GitHub Pages in repository settings.
-2. Set source to "GitHub Actions".
-3. Push to the `main` branch to trigger deployment.
-
-## License
-
-MIT License - see [LICENSE](LICENSE) for details.
+Deployed to GitHub Pages with automated CI/CD. Optimized for sub-second first meaningful paint via Vite 6.
 
 ---
 
-**Live Demo:** [https://mk-knight23.github.io/35-JS-Mini-Games-Collection/](https://mk-knight23.github.io/35-JS-Mini-Games-Collection/)
+**License:** MIT
+**Architect:** mk-knight23
