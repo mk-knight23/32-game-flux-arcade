@@ -3,6 +3,8 @@ import { ref } from 'vue'
 import { useRouter } from 'vue-router'
 import { ChevronLeft, Maximize2 } from 'lucide-vue-next'
 import CatChaos from '../arcade/cat-chaos/CatChaos.vue'
+import SeniorDance from '../arcade/senior-dance/SeniorDance.vue'
+import FoodFrenzy from '../arcade/food-frenzy/FoodFrenzy.vue'
 
 const props = defineProps<{ id: string }>()
 const router = useRouter()
@@ -12,7 +14,7 @@ const router = useRouter()
   <div class="h-screen w-screen flex flex-col bg-black overflow-hidden relative">
     
     <!-- Chamber Nav -->
-    <nav class="h-20 border-b border-white/5 px-10 flex items-center justify-between absolute top-0 w-full z-50 bg-black/40 backdrop-blur-md pointer-events-auto">
+    <nav class="h-20 border-b border-white/5 px-11 flex items-center justify-between absolute top-0 w-full z-50 bg-black/40 backdrop-blur-md pointer-events-auto">
        <button @click="router.push('/')" class="flex items-center space-x-3 text-slate-500 hover:text-white transition-all">
           <ChevronLeft :size="20" />
           <span class="text-[10px] font-black uppercase tracking-widest">Back to Lobby</span>
@@ -30,11 +32,19 @@ const router = useRouter()
     <!-- Game Mount Point -->
     <main class="flex-1 flex items-center justify-center pt-20">
        <CatChaos v-if="id === 'clumsy-cat'" />
+       <SeniorDance v-else-if="id === 'senior-dance'" />
+       <FoodFrenzy v-else-if="id === 'food-frenzy'" />
        <div v-else class="text-center space-y-4">
           <h2 class="text-3xl font-display font-black text-white italic uppercase tracking-tighter">Engine Not Configured</h2>
           <p class="text-[10px] font-bold text-slate-500 uppercase tracking-[0.3em]">Neural Link Offline for {{ id }}</p>
        </div>
     </main>
+
+    <!-- Footer Branding -->
+    <footer class="absolute bottom-0 w-full h-12 border-t border-white/5 px-10 flex items-center justify-between text-[8px] font-black uppercase tracking-[0.4em] text-slate-600 bg-black/40 backdrop-blur-md">
+      <span>© 2026 Made by MK — Built by Musharraf Kazi</span>
+      <a href="https://github.com/mk-knight23" target="_blank" rel="noopener noreferrer" class="hover:text-arcade-neon transition-colors">GitHub</a>
+    </footer>
 
   </div>
 </template>
