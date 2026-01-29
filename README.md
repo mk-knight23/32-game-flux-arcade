@@ -94,6 +94,13 @@ Deployed to GitHub Pages with automated CI/CD. Optimized for sub-second first me
 
 ---
 
+### Live Demo
+- GitHub Pages: <https://mk-knight23.github.io/30-js-mini-games/>
+- Vercel: [Deploy your own](https://vercel.com/new)
+- Netlify: [Deploy your own](https://app.netlify.com/start)
+
+---
+
 ## 📝 Design Notes (V2)
 
 ### Intentional Quirk: The Daily Challenge Rotation
