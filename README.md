@@ -111,3 +111,25 @@ All progress (tickets, unlocks, daily status) lives in localStorage. Clear your 
 
 ### What I Chose NOT to Build
 No microtransactions. The ticket economy could easily be "buy 1000 tickets for $0.99." I didn't build that. Virtual currencies in free games always lead to dark patterns. These tickets have no monetary value—they're just a progress abstraction. The only way to earn them is to play.
+
+## 🎉 Additional Features (V3)
+
+Three quality-of-life improvements for the arcade experience:
+
+### Sound Toggle in Lobby
+**Why added**: Previously, you had to enter a game and then pause to toggle sound. In the lobby, there was no way to mute before playing.
+
+**What changed**: Added a sound toggle button directly in the lobby header. Your preference persists across games and sessions via localStorage.
+
+### Achievement Badges
+**Why added**: Playing games without milestones feels aimless beyond tickets.
+
+**What changed**: Added achievement badges for each game—"First Win," "Score 1000," "5-Game Streak." Badges display on your player card in the lobby. They're purely cosmetic; no gameplay effect.
+
+### Session Timer
+**Why added**: For mindful gaming, it's useful to know how long you've been playing.
+
+**What changed**: Added a subtle session timer in the footer showing time since page load. Helps with self-regulation without being intrusive.
+
+### Intentionally Rejected: Global Leaderboards
+I considered adding cross-player leaderboards. Rejected because this is a local, self-contained arcade. Leaderboards would require accounts, which adds friction and complexity. Competing against your own scores is enough. Sometimes you just want to play alone.
