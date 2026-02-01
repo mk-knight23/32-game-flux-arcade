@@ -92,8 +92,12 @@ Deployed to GitHub Pages with automated CI/CD. Optimized for sub-second first me
 
 ---
 
-### Live Demo
-- GitHub Pages: <https://mk-knight23.github.io/30-js-mini-games/>
+## 🎮 Live Demos
+
+| Platform | URL |
+|----------|-----|
+| **Vercel** | [32-game-flux-arcade.vercel.app](https://32-game-flux-arcade.vercel.app) |
+| **Render** | [three2-game-flux-arcade.onrender.com](https://three2-game-flux-arcade.onrender.com) |
 - Vercel: [Deploy your own](https://vercel.com/new)
 - Netlify: [Deploy your own](https://app.netlify.com/start)
 
