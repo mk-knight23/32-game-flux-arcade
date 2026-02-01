@@ -20,7 +20,7 @@ const router = useRouter()
           <span class="text-[10px] font-black uppercase tracking-widest">Back to Lobby</span>
        </button>
        <div class="flex items-center space-x-3">
-          <span class="text-[10px] font-black uppercase tracking-[0.4em] text-arcade-neon italic">{{ id }} Chamber</span>
+          <span class="text-[10px] font-black uppercase tracking-[0.4em] text-flux-pink italic">{{ id }} // CHAMBER</span>
        </div>
        <div class="flex items-center space-x-4">
           <button class="p-2.5 rounded-xl hover:bg-white/5 text-slate-500 hover:text-white transition-all">
@@ -35,15 +35,15 @@ const router = useRouter()
        <SeniorDance v-else-if="id === 'senior-dance'" />
        <FoodFrenzy v-else-if="id === 'food-frenzy'" />
        <div v-else class="text-center space-y-4">
-          <h2 class="text-3xl font-display font-black text-white italic uppercase tracking-tighter">Engine Not Configured</h2>
-          <p class="text-[10px] font-bold text-slate-500 uppercase tracking-[0.3em]">Neural Link Offline for {{ id }}</p>
+          <h2 class="text-3xl font-display font-black text-white italic uppercase tracking-tighter">MODULE_NOT_FOUND</h2>
+          <p class="text-[10px] font-bold text-slate-500 uppercase tracking-[0.3em]">QUANTUM_LINK_OFFLINE for {{ id }}</p>
        </div>
     </main>
 
     <!-- Footer Branding -->
     <footer class="absolute bottom-0 w-full h-12 border-t border-white/5 px-10 flex items-center justify-between text-[8px] font-black uppercase tracking-[0.4em] text-slate-600 bg-black/40 backdrop-blur-md">
-      <span>© 2026 Made by MK — Built by Musharraf Kazi</span>
-      <a href="https://github.com/mk-knight23" target="_blank" rel="noopener noreferrer" class="hover:text-arcade-neon transition-colors">GitHub</a>
+      <span>FLUX_ARCADE // ENGINE v1.0</span>
+      <a href="https://github.com/mk-knight23" target="_blank" rel="noopener noreferrer" class="hover:text-flux-neon transition-colors">GitHub</a>
     </footer>
 
   </div>

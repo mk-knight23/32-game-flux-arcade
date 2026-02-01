@@ -8,8 +8,8 @@ import SettingsPanel from './components/ui/SettingsPanel.vue'
 import { useRouter } from 'vue-router'
 
 useHead({
-  title: 'Arcade Hub | Production High-Fidelity',
-  meta: [{ name: 'description', content: 'A professional modular arcade collection built with Vue 3.' }]
+  title: 'FLUX_ARCADE // Quantum Hub',
+  meta: [{ name: 'description', content: 'A modular quantum arcade collection powered by Flux Engine.' }]
 })
 
 const settings = useSettingsStore()

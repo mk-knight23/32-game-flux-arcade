@@ -61,47 +61,47 @@ function playGame(gameId: string) {
 </script>
 
 <template>
-  <div class="min-h-screen p-10 lg:p-20 space-y-20 pixel-grid bg-arcade-hub overflow-y-auto custom-scrollbar">
+  <div class="min-h-screen p-10 lg:p-20 space-y-20 pixel-grid bg-flux-bg overflow-y-auto custom-scrollbar">
 
     <!-- Lobby Header -->
     <header class="flex justify-between items-end">
        <div class="space-y-7">
           <div class="flex items-center space-x-4">
-             <div class="bg-arcade-neon p-2 rounded-xl rotate-3 shadow-lg shadow-arcade-neon/20">
+             <div class="bg-flux-neon p-2 rounded-none rotate-3 shadow-[0_0_15px_rgba(168,85,247,0.4)]">
                 <Gamepad2 class="text-black" :size="24" />
              </div>
-             <h1 class="text-3xl font-display font-black tracking-tighter uppercase dark:text-white italic">Arcade<span class="text-arcade-neon">Hub.</span></h1>
+             <h1 class="text-3xl font-display font-black tracking-tighter uppercase dark:text-white italic">FLUX<span class="text-flux-neon">_ARCADE</span></h1>
           </div>
           <div class="flex items-center space-x-11">
              <div class="flex flex-col">
-                <span class="text-[8px] font-black uppercase tracking-[0.4em] text-slate-500 dark:text-slate-400">Global Tickets</span>
-                <span class="text-2xl font-game text-arcade-gold">{{ store.totalTickets }}</span>
+                <span class="text-[8px] font-black uppercase tracking-[0.4em] text-flux-neon/60">Global Tickets</span>
+                <span class="text-2xl font-game text-flux-gold">{{ store.totalTickets }}</span>
              </div>
              <div class="h-10 w-px bg-white/5 dark:bg-white/10"></div>
              <div class="flex flex-col">
-                <span class="text-[8px] font-black uppercase tracking-[0.4em] text-slate-500 dark:text-slate-400">Games Unlocked</span>
-                <span class="text-2xl font-game text-arcade-neon uppercase">{{ store.unlockedGames.length }}/{{ games.length }}</span>
+                <span class="text-[8px] font-black uppercase tracking-[0.4em] text-flux-neon/60">Games Unlocked</span>
+                <span class="text-2xl font-game text-flux-cyan uppercase">{{ store.unlockedGames.length }}/{{ games.length }}</span>
              </div>
           </div>
        </div>
 
        <div class="hidden md:flex relative group pointer-events-auto">
-          <Search class="absolute left-5 top-1/2 -translate-y-1/2 text-slate-500" :size="18" />
-          <input type="text" placeholder="Find a game..." class="bg-arcade-card/40 border border-white/5 dark:bg-white/5 rounded-2xl pl-14 pr-9 py-3 text-xs font-bold outline-none focus:border-arcade-neon transition-all text-white dark:placeholder:text-slate-500">
+          <Search class="absolute left-5 top-1/2 -translate-y-1/2 text-flux-neon/50" :size="18" />
+          <input type="text" placeholder="QUERY_DB..." class="bg-flux-card border border-flux-neon/20 rounded-none pl-14 pr-9 py-3 text-xs font-bold outline-none focus:border-flux-neon transition-all text-white placeholder:text-flux-neon/30 focus:shadow-[0_0_15px_rgba(168,85,247,0.2)]">
        </div>
     </header>
 
     <!-- V2: Daily Challenge Banner -->
-    <section v-if="dailyGame" class="relative overflow-hidden rounded-3xl bg-gradient-to-r from-purple-600/20 to-pink-600/20 border border-purple-500/30 p-6">
+    <section v-if="dailyGame" class="relative overflow-hidden rounded-none bg-gradient-to-r from-flux-neon/20 to-flux-pink/20 border border-flux-neon/30 p-6">
       <div class="flex items-center justify-between">
         <div class="flex items-center gap-4">
-          <div class="p-3 bg-purple-500/20 rounded-2xl">
-            <Calendar class="text-purple-400" :size="24" />
+          <div class="p-3 bg-flux-neon/20 rounded-none border border-flux-neon/20">
+            <Calendar class="text-flux-neon" :size="24" />
           </div>
           <div>
-            <p class="text-[10px] font-black uppercase tracking-widest text-purple-400">Daily Challenge</p>
+            <p class="text-[10px] font-black uppercase tracking-widest text-flux-neon">Daily Challenge</p>
             <h2 class="text-xl font-display font-black text-white">
-              Play <span class="text-purple-400">{{ dailyGame.title }}</span> for 2x Tickets
+              Play <span class="text-flux-pink">{{ dailyGame.title }}</span> for 2x Tickets
             </h2>
             <p class="text-xs text-slate-400 mt-1">
               {{ dailyCompleted ? 'Come back tomorrow for the next challenge!' : 'First play today earns double tickets!' }}
@@ -109,11 +109,11 @@ function playGame(gameId: string) {
           </div>
         </div>
         <div class="flex items-center gap-3">
-          <div v-if="!dailyCompleted" class="flex items-center gap-2 bg-purple-500/20 px-4 py-2 rounded-xl">
-            <Gift class="text-purple-400" :size="16" />
-            <span class="text-sm font-black text-purple-400">2x Bonus Active</span>
+          <div v-if="!dailyCompleted" class="flex items-center gap-2 bg-flux-neon/20 border border-flux-neon/20 px-4 py-2 rounded-none">
+            <Gift class="text-flux-neon" :size="16" />
+            <span class="text-sm font-black text-flux-neon">2x Bonus Active</span>
           </div>
-          <div v-else class="flex items-center gap-2 bg-slate-700/50 px-4 py-2 rounded-xl">
+          <div v-else class="flex items-center gap-2 bg-slate-700/50 px-4 py-2 rounded-none">
             <Sparkles class="text-slate-400" :size="16" />
             <span class="text-sm font-black text-slate-400">Completed Today</span>
           </div>
@@ -127,19 +127,19 @@ function playGame(gameId: string) {
           <!-- Lock Overlay -->
           <div
             v-if="!isGameUnlocked(game.id)"
-            class="absolute inset-0 z-20 bg-black/60 backdrop-blur-sm flex flex-col items-center justify-center space-y-4"
+            class="absolute inset-0 z-20 bg-black/80 backdrop-blur-sm flex flex-col items-center justify-center space-y-4"
             @click.stop
           >
-             <Lock :size="32" class="text-slate-500" />
-             <p class="text-xs font-bold text-slate-400 uppercase tracking-widest">{{ getGameCost(game.id) }} Tickets</p>
+             <Lock :size="32" class="text-flux-neon/50" />
+             <p class="text-xs font-bold text-flux-neon/60 uppercase tracking-widest">{{ getGameCost(game.id) }} Tickets</p>
              <button
                @click="handleUnlock(game.id)"
                :disabled="!canUnlock(game.id) || unlockingGame !== null"
-               class="px-6 py-2 font-black uppercase text-[10px] rounded-lg tracking-widest transition-all flex items-center space-x-2"
-               :class="canUnlock(game.id) ? 'bg-white text-black hover:bg-arcade-neon' : 'bg-slate-700 text-slate-500 cursor-not-allowed'"
+               class="px-6 py-2 font-black uppercase text-[10px] rounded-none tracking-widest transition-all flex items-center space-x-2 border"
+               :class="canUnlock(game.id) ? 'bg-flux-neon text-black border-flux-neon hover:bg-white hover:border-white' : 'bg-flux-card text-slate-600 border-slate-700 cursor-not-allowed'"
              >
                <Sparkles v-if="unlockingGame === game.id" :size="14" class="animate-spin" />
-               <span>{{ canUnlock(game.id) ? 'Unlock Now' : 'Need More Tickets' }}</span>
+               <span>{{ canUnlock(game.id) ? 'UNLOCK_ACCESS' : 'INSUFFICIENT_CREDITS' }}</span>
              </button>
           </div>
 
@@ -156,21 +156,21 @@ function playGame(gameId: string) {
           <div class="p-10 space-y-8">
              <div class="flex justify-between items-start">
                 <div class="space-y-1">
-                   <span class="text-[8px] font-black uppercase tracking-widest text-slate-500 dark:text-slate-400">{{ game.category }} // {{ game.difficulty }}</span>
-                   <h3 class="text-3xl font-display font-black uppercase italic text-white dark:text-white tracking-tight">{{ game.title }}</h3>
+                   <span class="text-[8px] font-black uppercase tracking-widest text-flux-neon/60">{{ game.category }} // {{ game.difficulty }}</span>
+                   <h3 class="text-3xl font-display font-black uppercase italic text-white tracking-tight">{{ game.title }}</h3>
                 </div>
-                <div class="p-3 bg-white/5 dark:bg-white/5 rounded-xl border border-white/5">
-                   <Trophy :size="18" class="text-arcade-gold" />
+                <div class="p-3 bg-flux-card rounded-none border border-flux-gold/20">
+                   <Trophy :size="18" class="text-flux-gold" />
                 </div>
              </div>
 
-             <div class="flex items-center justify-between pt-6 border-t border-white/5 dark:border-white/10">
+             <div class="flex items-center justify-between pt-6 border-t border-flux-neon/10">
                 <div class="flex flex-col">
-                   <span class="text-[8px] font-black uppercase text-slate-600 dark:text-slate-400">Personal Best</span>
-                   <span class="text-sm font-game text-white dark:text-white">{{ store.highScores[game.id] || 0 }}</span>
+                   <span class="text-[8px] font-black uppercase text-flux-pink/60">HIGH_SCORE</span>
+                   <span class="text-sm font-game text-white">{{ store.highScores[game.id] || 0 }}</span>
                 </div>
-                <div class="w-12 h-12 rounded-full flex items-center justify-center transition-all"
-                     :class="isGameUnlocked(game.id) ? 'bg-white text-black hover:bg-arcade-neon hover:scale-110 cursor-pointer' : 'bg-slate-700 text-slate-500 cursor-not-allowed'">
+                <div class="w-12 h-12 rounded-none flex items-center justify-center transition-all border"
+                     :class="isGameUnlocked(game.id) ? 'bg-flux-neon text-black border-flux-neon hover:bg-white hover:border-white hover:scale-110 cursor-pointer' : 'bg-flux-card text-slate-700 border-slate-800 cursor-not-allowed'">
                    <Play fill="currentColor" :size="20" class="ml-1" />
                 </div>
              </div>

@@ -1,22 +1,20 @@
-# Arcade Hub - Professional Games Collection
+# 32-game-flux-arcade
 
-A modular high-fidelity arcade portal built with **Vue 3**, **TypeScript**, and **Pinia**. Designed for seamless game engine integration, featuring global player stats, persistent earnings, and a "Cyber Arcade" lobby experience.
+<p align="center">
+  <img src="https://img.shields.io/badge/Version-3.0.0-EC4899?style=for-the-badge" alt="Version">
+  <img src="https://img.shields.io/badge/Style-Quantum_Flux-A855F7?style=for-the-badge" alt="Style">
+  <img src="https://img.shields.io/badge/Stack-Vue_Pinia-4FC08D?style=for-the-badge&logo=vue.js" alt="Stack">
+</p>
 
-## Overview
-This collection replaces the legacy React dashboard with a modern, code-split Vue 3 architecture. Each game operates as an independent engine within a secured "Game Chamber", sharing a unified state system for achievements and tickets.
+## 🌐 The Modular Arcade Nexus
 
-## Features Comparison
+**FLUX_ARCADE** is a high-fidelity, component-based game engine hosting a suite of arcade experiences. Built on a unified state system ("Core System"), it treats individual games as pluggable modules ("Chambers") within a persistent quantum hub.
 
-| Feature | Legacy (React) | Upgraded (Vue 3 v2.0) |
-| :--- | :--- | :--- |
-| **Architecture** | Monolithic dashboard | **Modular Engine-based Design** |
-| **State** | Standard Reducers | **Pinia (Cross-module persistence)** |
-| **Routing** | Component switching | **Vue Router (Chamber Isolation)** |
-| **Loading** | Bulk asset load | **Dynamic Import (On-demand play)** |
-| **UX** | Static list | **Animated 3D Discovery Lobby** |
-| **Stats** | Local only | **Global XP & Ticket Ecosystem** |
-| **Games** | 1 placeholder | **3 Fully Playable Games** |
-| **Unlock System** | None | **Ticket-based Unlocking** |
+### ⚡ Flux Engine Features
+- **Quantum Lobby**: Immersive animated discovery interface with "Flux Neon" aesthetics.
+- **Global Economy**: "Core Tickets" persistence across all modules.
+- **Dynamic Loading**: On-demand module injection for optimized bundle splitting.
+- **Daily Protocol**: Deterministic daily challenges with 2x multiplier bonuses.
 
 ## Available Games
 

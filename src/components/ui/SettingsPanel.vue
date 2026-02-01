@@ -60,8 +60,8 @@ function close() {
         >
           <header class="flex items-center justify-between p-6 border-b border-white/10">
             <div class="flex items-center space-x-3">
-              <Settings :size="24" class="text-arcade-neon" />
-              <h2 id="settings-title" class="text-xl font-bold text-white">Settings</h2>
+              <Settings :size="24" class="text-flux-neon" />
+              <h2 id="settings-title" class="text-xl font-bold text-white uppercase italic tracking-wider">SYSTEM_CONFIG</h2>
             </div>
             <button
               @click="close"
@@ -83,13 +83,13 @@ function close() {
                   <span class="text-white font-medium">Sound Effects</span>
                   <button
                     @click="settings.toggleSound()"
-                    class="relative w-14 h-7 rounded-full transition-colors"
-                    :class="settings.soundEnabled ? 'bg-arcade-neon' : 'bg-slate-600'"
+                    class="relative w-14 h-7 rounded-none transition-colors border"
+                    :class="settings.soundEnabled ? 'bg-flux-neon border-flux-neon' : 'bg-flux-card border-slate-700'"
                     role="switch"
                     :aria-checked="settings.soundEnabled"
                   >
                     <span
-                      class="absolute top-1 left-1 w-5 h-5 bg-white rounded-full shadow transition-transform"
+                      class="absolute top-1 left-1 w-5 h-5 bg-white rounded-none shadow transition-transform"
                       :class="settings.soundEnabled ? 'translate-x-7' : 'translate-x-0'"
                     />
                   </button>
@@ -105,7 +105,7 @@ function close() {
                     max="100"
                     :value="settings.volume"
                     @input="settings.setVolume(($event.target as HTMLInputElement).valueAsNumber)"
-                    class="w-full h-2 bg-slate-600 rounded-lg appearance-none cursor-pointer accent-arcade-neon"
+                    class="w-full h-2 bg-slate-700 rounded-none appearance-none cursor-pointer accent-flux-neon"
                     aria-label="Volume slider"
                   />
                 </div>
@@ -122,14 +122,14 @@ function close() {
                   v-for="option in themeOptions"
                   :key="option.value"
                   @click="settings.setTheme(option.value)"
-                  class="flex flex-col items-center p-4 rounded-xl transition-all border-2"
+                  class="flex flex-col items-center p-4 rounded-none transition-all border"
                   :class="settings.theme === option.value
-                    ? 'border-arcade-neon bg-arcade-neon/10'
+                    ? 'border-flux-neon bg-flux-neon/10 text-flux-neon shadow-[0_0_10px_rgba(168,85,247,0.2)]'
                     : 'border-white/10 hover:border-white/30 bg-white/5'"
                   :aria-pressed="settings.theme === option.value"
                 >
-                  <component :is="option.icon" :size="20" class="mb-2" :class="settings.theme === option.value ? 'text-arcade-neon' : 'text-slate-400'" />
-                  <span class="text-sm font-medium" :class="settings.theme === option.value ? 'text-white' : 'text-slate-400'">{{ option.label }}</span>
+                  <component :is="option.icon" :size="20" class="mb-2" />
+                  <span class="text-[10px] font-bold uppercase tracking-widest">{{ option.label }}</span>
                 </button>
               </div>
             </section>
@@ -159,7 +159,7 @@ function close() {
               </div>
               <button
                 @click="stats.resetStats()"
-                class="mt-4 w-full flex items-center justify-center space-x-2 p-3 text-arcade-danger hover:text-red-400 hover:bg-red-500/10 rounded-xl transition-colors"
+                class="mt-4 w-full flex items-center justify-center space-x-2 p-3 text-red-400 hover:text-red-300 hover:bg-red-500/10 rounded-none transition-colors border border-red-500/30"
               >
                 <RotateCcw :size="16" />
                 <span class="text-sm font-medium">Reset Statistics</span>
@@ -185,8 +185,8 @@ function close() {
           </div>
 
           <footer class="p-6 border-t border-white/10 text-center">
-            <p class="text-xs text-slate-500">
-              Arcade Hub v1.0.0 - Built with Vue 3
+            <p class="text-[10px] text-flux-neon/40 uppercase tracking-[0.3em]">
+              FLUX_ARCADE v1.0 // CORE_SYSTEM
             </p>
           </footer>
         </div>

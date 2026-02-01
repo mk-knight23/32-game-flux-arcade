@@ -1,8 +1,12 @@
 {
-  "name": "arcade-hub-vue",
+  "name": "32-game-flux-arcade",
   "private": true,
-  "version": "2.0.0",
+  "version": "1.0.0",
   "type": "module",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mk-knight23/32-game-flux-arcade.git"
+  },
   "scripts": {
     "dev": "vite",
     "build": "vue-tsc -b && vite build",
