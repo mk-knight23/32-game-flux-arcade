@@ -46,3 +46,16 @@ body {
   border-radius: 1rem;
   box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
 }
+
+/* Navigation link styles */
+.nav-link {
+  @apply text-flux-neon/60 hover:text-flux-cyan transition-colors duration-200;
+}
+
+.nav-link.active {
+  @apply text-flux-neon font-bold;
+}
+
+.nav-link.disabled {
+  @apply text-flux-neon/30 cursor-not-allowed;
+}
