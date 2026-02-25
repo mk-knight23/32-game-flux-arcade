@@ -1,94 +1,8 @@
 # 32-game-flux-arcade
 
-<p align="center">
-  <img src="https://img.shields.io/badge/Version-3.0.0-EC4899?style=for-the-badge" alt="Version">
-  <img src="https://img.shields.io/badge/Style-Quantum_Flux-A855F7?style=for-the-badge" alt="Style">
-  <img src="https://img.shields.io/badge/Stack-Vue_Pinia-4FC08D?style=for-the-badge&logo=vue.js" alt="Stack">
-</p>
+**A Multi-Game Arcade Experience**
 
-## 🌐 The Modular Arcade Nexus
-
-**FLUX_ARCADE** is a high-fidelity, component-based game engine hosting a suite of arcade experiences. Built on a unified state system ("Core System"), it treats individual games as pluggable modules ("Chambers") within a persistent quantum hub.
-
-### ⚡ Flux Engine Features
-- **Quantum Lobby**: Immersive animated discovery interface with "Flux Neon" aesthetics.
-- **Global Economy**: "Core Tickets" persistence across all modules.
-- **Dynamic Loading**: On-demand module injection for optimized bundle splitting.
-- **Daily Protocol**: Deterministic daily challenges with 2x multiplier bonuses.
-
-## Available Games
-
-### 1. Cat Chaos (Unlocked)
-- **Genre:** Endless Runner
-- **Controls:** Space/Up/W to jump, Tap on mobile
-- **Features:** Jump over dogs and brooms, collect golden fish for bonus points
-- **Progression:** Speed increases over time, 3 lives
-
-### 2. Senior Dance (200 Tickets)
-- **Genre:** Rhythm Game
-- **Controls:** Arrow keys or WASD
-- **Features:** Hit arrows to the beat, build combos for multiplier
-- **Progression:** 50 arrows per session, perfect hits give bonus points
-
-### 3. Food Frenzy (500 Tickets)
-- **Genre:** Clicker/Arcade
-- **Controls:** Mouse click or tap
-- **Features:** Click food to collect, avoid bombs
-- **Progression:** 60-second timer, level up for more point multipliers
-
-## New Features
-
-### Ticket Economy
-- Earn 1 ticket per 100 points scored in any game
-- Spend tickets to unlock new games
-- Starting balance: 100 tickets
-
-### Unlock System
-- Games can be unlocked with earned tickets
-- Persistent unlock state across sessions
-- Visual feedback for unlockable/locked games
-
-### High Score Tracking
-- Per-game high scores saved locally
-- Personal best displayed in lobby
-- Global ticket count visible in header
-
-## Tech Stack
-- **Framework:** Vue 3.5 (Composition API)
-- **Routing:** Vue Router 4
-- **State:** Pinia (Enterprise patterns)
-- **Styling:** Tailwind CSS (Neon-modern palette)
-- **Icons:** Lucide Vue
-- **Build:** Vite 6
-
-## Setup & Build Instructions
-
-### Prerequisites
-- Node.js 20.x or higher
-- npm 10.x or higher
-
-### Installation
-```bash
-npm install
-```
-
-### Development
-```bash
-npm run dev
-```
-
-### Production Build
-```bash
-npm run build
-```
-
-## Deployment
-Deployed to GitHub Pages with automated CI/CD. Optimized for sub-second first meaningful paint via Vite 6.
-
----
-
-**License:** MIT
-**Architect:** mk-knight23
+Three exciting arcade games in one place! Cat Chaos, Food Frenzy, and Senior Dance - all with unified progression, tournaments, and daily challenges.
 
 ---
 
@@ -97,41 +11,171 @@ Deployed to GitHub Pages with automated CI/CD. Optimized for sub-second first me
 | Platform | URL |
 |----------|-----|
 | **Vercel** | [32-game-flux-arcade.vercel.app](https://32-game-flux-arcade.vercel.app) |
-| **Render** | [three2-game-flux-arcade.onrender.com](https://three2-game-flux-arcade.onrender.com) |
-- Vercel: [Deploy your own](https://vercel.com/new)
-- Netlify: [Deploy your own](https://app.netlify.com/start)
 
 ---
 
-## 📝 Design Notes (V2)
+## 🌟 Features
 
-### Intentional Quirk: The Daily Challenge Rotation
-Every day, one game is featured with 2x ticket bonus. The rotation is deterministic (based on day of year), not random. This means you can predict tomorrow's challenge. The quirk: it's "unfair" that some days favor games you don't like. But that's life. Daily challenges should feel like weather—sometimes sunny, sometimes rainy. You learn all games or you wait.
+### Core Games
 
-### Tradeoff: LocalStorage Over Backend
-All progress (tickets, unlocks, daily status) lives in localStorage. Clear your browser, lose everything. The tradeoff: no accounts, no passwords, no "sync across devices." This is an arcade you visit, not a home you own. The ephemeral nature makes each session feel self-contained.
+#### 🐱 Cat Chaos
+Navigate through chaotic levels with your cat!
 
-### What I Chose NOT to Build
-No microtransactions. The ticket economy could easily be "buy 1000 tickets for $0.99." I didn't build that. Virtual currencies in free games always lead to dark patterns. These tickets have no monetary value—they're just a progress abstraction. The only way to earn them is to play.
+#### 🍔 Food Frenzy
+Collect food and build epic combos!
 
-## 🎉 Additional Features (V3)
+#### 💃 Senior Dance
+Dance your way to high scores!
 
-Three quality-of-life improvements for the arcade experience:
+### 🆕 New Features (V2)
 
-### Sound Toggle in Lobby
-**Why added**: Previously, you had to enter a game and then pause to toggle sound. In the lobby, there was no way to mute before playing.
+#### 1. Tournament System
+Compete in tournaments across all games:
 
-**What changed**: Added a sound toggle button directly in the lobby header. Your preference persists across games and sessions via localStorage.
+- **Multiple Formats**: Single Elimination, Double Elimination, Round Robin, Swiss
+- **Auto-Brackets**: Automatically generated tournament brackets
+- **Match Tracking**: Record and track match results
+- **Leaderboards**: Real-time tournament standings
+- **Prizes**: Coins, trophies, badges, and titles for winners
 
-### Achievement Badges
-**Why added**: Playing games without milestones feels aimless beyond tickets.
+**Tournament Features:**
+- Create custom tournaments
+- Join open tournaments
+- Live match updates
+- Winner determination
+- Prize distribution
 
-**What changed**: Added achievement badges for each game—"First Win," "Score 1000," "5-Game Streak." Badges display on your player card in the lobby. They're purely cosmetic; no gameplay effect.
+#### 2. Cross-Game Achievement System
+Unified achievements across all arcade games:
 
-### Session Timer
-**Why added**: For mindful gaming, it's useful to know how long you've been playing.
+- **8+ Achievements**: Cross-game and game-specific achievements
+- **Rarity Tiers**: Common, Rare, Epic, and Legendary
+- **Progress Tracking**: Track your progress toward each achievement
+- **Rewards**: Coins, badges, and titles for completions
+- **Stat Tracking**: Automatic tracking of game statistics
 
-**What changed**: Added a subtle session timer in the footer showing time since page load. Helps with self-regulation without being intrusive.
+**Sample Achievements:**
+- 🏆 First Victory: Win your first game
+- 💯 Perfectionist: Achieve a perfect score
+- ⏱️ Marathon Gamer: Play for 2 hours total
+- 👑 Tournament Champion: Win a tournament
+- 🎮 Arcade Master: Win in all arcade games
 
-### Intentionally Rejected: Global Leaderboards
-I considered adding cross-player leaderboards. Rejected because this is a local, self-contained arcade. Leaderboards would require accounts, which adds friction and complexity. Competing against your own scores is enough. Sometimes you just want to play alone.
+#### 3. Multiplayer Lobby System
+Real-time multiplayer for all games:
+
+- **Create Lobbies**: Host your own game sessions
+- **Join Lobbies**: Find and join open games
+- **Private Lobbies**: Password-protected private games
+- **Ready System**: Players ready up before starting
+- **Live Leaderboards**: Real-time score tracking
+- **Host Controls**: Kick players, start games, close lobbies
+
+**Lobby Features:**
+- Up to 8 players per lobby
+- Player status indicators
+- In-game score updates
+- Auto-host transfer on leave
+- Lobby chat (coming soon)
+
+#### 4. Daily Challenges
+New challenges every day:
+
+- **8 Daily Challenges**: Different challenges for each game
+- **Difficulty Levels**: Easy, Medium, Hard, and Extreme
+- **Cross-Game Challenges**: Complete challenges across all games
+- **Auto-Refresh**: New challenges appear every day at midnight
+- **Rewards**: Coins and XP for completing challenges
+
+**Daily Challenge Examples:**
+- Cat Chaos Master: Score 5,000 points
+- Food Collector: Collect 50 food items
+- Dance Marathon: Complete 5 dances
+- Arcade Explorer: Play all 3 games
+- High Scorer: 10,000 total points
+
+#### 5. Unified Player Profile
+One profile across all games:
+
+- **Total Stats**: Combined statistics from all games
+- **Level System**: Earn XP and level up
+- **Currency**: Universal coins across all games
+- **Badges & Titles**: Unlock cosmetic rewards
+- **Play History**: Track your gaming history
+
+**Profile Features:**
+- Total playtime
+- Games played
+- Win rate
+- High scores
+- Achievement progress
+
+## 🛠️ Tech Stack
+- **Frontend**: Vue 3, TypeScript, Vite 6
+- **State Management**: Pinia + Zustand
+- **Routing**: Vue Router 4
+- **Styling**: Tailwind CSS v4
+- **Icons**: Lucide Vue
+
+## 🚀 Getting Started
+
+### Prerequisites
+- Node.js 18+
+- npm or yarn
+
+### Installation
+```bash
+# Clone the repository
+git clone https://github.com/mk-knight23/32-game-flux-arcade.git
+
+# Install dependencies
+npm install
+
+# Start dev server
+npm run dev
+
+# Build for production
+npm run build
+```
+
+## 📖 How to Play
+
+### Cat Chaos
+1. Navigate your cat through obstacles
+2. Collect power-ups for advantages
+3. Survive as long as possible
+4. Beat your high score!
+
+### Food Frenzy
+1. Move to collect falling food
+2. Build combos for bonus points
+3. Avoid bad food
+4. Chain combos for multipliers!
+
+### Senior Dance
+1. Follow the dance patterns
+2. Time your moves perfectly
+3. Complete dance routines
+4. Earn perfect scores!
+
+## 🏆 Tournaments
+
+### Creating a Tournament
+1. Click "Create Tournament"
+2. Select game and format
+3. Set max players and start time
+4. Wait for players to join
+5. Start when ready!
+
+### Joining a Tournament
+1. Browse available tournaments
+2. Click "Join" on an open tournament
+3. Wait for the host to start
+4. Compete for prizes!
+
+## 📝 License
+
+MIT License - feel free to use this project for learning or inspiration.
+
+---
+*Made by MK — Musharraf Kazi*
