@@ -1,15 +1,5 @@
-# GitHub Pages Configuration
 theme: jekyll-theme-cayman
-title: Retro Arcade Collection
+title: game flux arcade
 description: Documentation for 32-game-flux-arcade
 baseurl: /32-game-flux-arcade
 url: https://mk-knight23.github.io
-
-# Navigation
-nav:
-  - title: Home
-    url: /
-  - title: Architecture
-    url: /architecture/
-  - title: API
-    url: /api/
